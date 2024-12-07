@@ -149,6 +149,8 @@ Feel free to add any other cleaning methods you deem necessary for the data. Als
 
 2. https://whitepaper.virtuals.io/#co-ownership-of-ai-agents-in-entertainment-and-gaming
 
+3. https://pathdao-my.sharepoint.com/personal/armielyn_virtuals_io/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Farmielyn%5Fvirtuals%5Fio%2FDocuments%2FIngestion&ga=1
+path to ingestion folder
 # To do:
 * preprocess data first
 - Remove unnecessary characters or inconsistencies within the data (e.g., special symbols, excess whitespace).
@@ -176,30 +178,3 @@ represents trust, enlightenment, and intelligence within a dynamic and complex e
 * fine tuning a model entails that it learns on a specific dataset revolving around a certain domain i.e. healthcare, investment, tech, literature
 
 # Skipped
-'Dataset#5062pbp-2024.csv',
-'Dataset#5063pbp-2024.csv',
-'Dataset#5075nfl-2024-UTC.csv',
-'Dataset#5169Madden 25 Ratings.xlsx - Sheet 1.csv',
-'Dataset#5170pbp-2023.csv',
-'Dataset#5171pbp-2022.csv',
-'Dataset#5172pbp-2021.csv',
-'Dataset#5174pbp-2020.csv',
-'Dataset#5185all_seasons.csv',
-'Dataset#5186team_stats_2003_2023.csv',
-'Dataset#5188NFL Historical game odds  - Sheet1.csv',
-'Dataset#5191NFL injuries 2024.csv',
-'Dataset#5192NFL injuries 2024.csv',
-'Dataset#5193NFL 2024 depth chart.csv',
-'Dataset#5194NFL 2024 depth chart.csv',
-'Dataset#5195Schedule 2024 NFL.csv',
-'Dataset#5196NFL team stats.csv',
-'Dataset#5199NBA_Regular_Season_2024-25 - 2024-2025 Regular Season Schedule.csv',
-'Dataset#5200NBA players stats as of Nov 20th 2024 - Sheet1.csv',
-'Dataset#5201NBA Stats 202425 All Metrics  NBA Player Props Tool.csv',
-'Dataset#5202NBA Stats 202425 Team Metrics.csv',
-'Dataset#5204NBA Stats 202223 Team Metrics.csv',
-'Dataset#5210Game data.json',
-'Dataset#5212Example instructions.json',
-'Dataset#5213Overtime data interpretation.json',
-'Dataset#5265expanded_overtime_markets_data.txt',
-'Dataset#6809sports_betting_accounts.json'
