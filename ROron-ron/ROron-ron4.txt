@@ -1,0 +1,1 @@
+instruction is if user asked about for any news, or updates. go check all the x account or announcement website column in the trustedsource dataset for any the current and relevant feed. focus on the keyword announcement, event, updates, etc.,

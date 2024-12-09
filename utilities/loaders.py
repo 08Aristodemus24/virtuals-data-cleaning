@@ -13,8 +13,24 @@ from striprtf.striprtf import rtf_to_text
 
 def read_files(input_dir, files):
     """
-    
+    {
+        'jsons': {
+            'dataset#234': <jsonfile>,
+            'dataset#234': <jsonfile>,
+            'dataset#234': <jsonfile>,
+            ...
+            'dataset#234': <jsonfile>,
+        },
+        'txts': {
+            'dataset#2324': <read txt files>,
+
+        },
+        'docs': {
+            'dataset#2342': <read rtf or docx file>,
+        }
+    }
     """
+
     def helper(file_name: str):
         if file_name.endswith('.json'):
             with open(f'{input_dir}/{file_name}', 'r') as file:
@@ -126,9 +142,31 @@ def read_rtf_files(input_dir: str, files: list[str]) -> dict[list[str]]:
         new_name = file_name.replace('.rtf', '')
         return new_name, data
 
-
-
     # concurrently read and load all .json files
     with ThreadPoolExecutor() as exe:
         rtfs = dict(list(exe.map(helper, files)))
     return rtfs
+
+def read_xlsx_files(input_dir: str, files: list[str]) -> dict[list[str]]:
+    def helper(file_name):
+        df = pd.read_excel(f'{input_dir}/{file_name}')
+        new_name = re.sub(r'.xlsx$', '', file_name)
+
+        return new_name, df
+    
+    # concurrently read and load all .xlsx files
+    with ThreadPoolExecutor() as exe:
+        xlsxs = dict(list(exe.map(helper, files)))
+    return xlsxs
+
+def read_csv_files(input_dir: str, files: list[str]) -> dict[list[str]]:
+    def helper(file_name):
+        df = pd.read_csv(f'{input_dir}/{file_name}')
+        new_name = re.sub(r'.csv$', '', file_name)
+
+        return new_name, df
+    
+    # concurrently read and load all .xlsx files
+    with ThreadPoolExecutor() as exe:
+        csvs = dict(list(exe.map(helper, files)))
+    return csvs

@@ -1,0 +1,40 @@
+hello tamers,
+we hope you are all getting great results from the ragmon claims we are excited to announce that the level up merge feature for leveling up your collected ragmons will soon be available on our website. the level up merge will launch soon, allowing users to enhance their ragmons. get your ragmons ready and prepare for the upgrade.
+in this article, we will take a closer look at the ragmon level up merge.
+what is ragmon level up merge
+the ragmon level up merge feature allows you to level up your ragmons. to do this, you need multiple ragmons of the same type. select the ragmon you want to level up and use several others of the same type as merge materials. these merge materials must be of the same type but can be of different levels.
+for example, if you want to level up a level 4 poring to a level 5 poring, you can use other porings of different levels as merge materials. however, it would not make sense to use a higher level poring, like a level 6, as a merge material. plan carefully with the ragmons you own to efficiently perform the level up merge.
+the ragmons used as materials will be burned, resulting in either a leveled up ragmon or one that stays at its current level plus a yggdrasil berry if you are lucky. for instance, to level up a level 1 poring, you need several additional porings. after merging, you will get either a single level 2 or a single level 1 poring plus possibly a yggdrasil berry. usage of yggdrasil berry will be explained in a later article. so stay tuned for that.
+having multiple ragmons of the same type is crucial for the level up merge. to determine how many ragmons you need for leveling up, you need to understand the merge success rate.
+success rate of level up merge
+the level up merge has a success rate, meaning you might succeed in leveling up with fewer ragmons, but using more ragmons increases the success rate. to safely level up your ragmons, it is best to maximize this success rate. how do you do this first, let learn how to calculate the merge success rate.
+by calculating the success rate, you can determine how many ragmons you need to level up your ragmon safely. there are three key points to remember base, accumulated value, and success rate percentage.
+base this is a level 1 ragmon.
+accumulated value this shows how many base values level 1 ragmons a certain level ragmon holds.
+success rate percentage this indicates the percentage chance of successfully merging and leveling up.
+each level and rarity has different accumulated values and success rates. below are the accumulated values and success rates for each level in the common rarity.
+let calculate the merge success rate using the table above. the basic idea is to multiply the success rate for your desired level range by the accumulated value of the materials you use.
+example 1
+to level up a level 1 poring a common grade ragmon to level 2
+using one level 1 poring as material accumulated value of 1
+success rate from level 1 to 2 in the common grade is 12.50 percent .
+total success rate 1 x 12.50 percent 12.50 percent .
+so, your merge success rate is 12.50 percent .
+example 2
+to level up a level 1 poring to level 2
+using four level 1 porings as material accumulated value 1 x 4
+success rate from level 1 to 2 in the common grade is 12.50 percent .
+total success rate 4 x 12.50 percent 50 percent .
+so, your merge success rate is 50 percent .
+this way, we can calculate that to achieve a 100 percent merge success rate to level up to level 2, you need eight level 1 porings. this is why the accumulated value of a level 2 common grade ragmon is 9, calculated as 8 materials plus 1 target, totaling 9. accumulated value represents how much of the base level 1 ragmon value a certain level ragmon holds.
+let take a more complex example at a higher level to level up a level 5 poring to level 6 using a level up merge
+using one level 3 poring accumulated value of 17 and one level 2 poring accumulated value of 9 as materials
+success rate from level 5 to 6 in the common grade is 6.25 percent .
+level 3 poring 17 x 6.25 percent 106.25 percent .
+level 2 poring 9 x 6.25 percent 56.25 percent .
+total success rate 106.25 percent 56.25 percent 162.5 percent .
+so, the merge success rate is 162.5 percent , ensuring a successful level up.
+the same calculation method applies to all level up merges. however, accumulated values and success rates vary by level and rarity, so refer to the following tables to plan your merges.
+success rate and material requirements by rarity
+below are the success rates and material requirements to level up your ragmon by rarity.
+common rarity

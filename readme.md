@@ -179,4 +179,10 @@ represents trust, enlightenment, and intelligence within a dynamic and complex e
 
 # Skipped
 
-# utilities
+# Completed:
+SisiyphusAI
+ROron-ron
+ORACLEX
+Sport Bettor AI
+Rain
+$Trust Me Bro

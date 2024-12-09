@@ -2,6 +2,10 @@ import os
 import re
 import csv
 import json
+import pandas as pd
+import datetime as dt
+from dateutil import parser 
+from concurrent.futures import ThreadPoolExecutor
 
 def line_valid(text):
     """
@@ -156,7 +160,53 @@ def process_all_files_in_directory(input_dir, output_dir, char_limit=700, max_ro
         except Exception as e:
             print(f"Error processing file {input_file}: {e}")
 
+def cohere_csvs(csvs: dict):
+    """
+    creates readable messages in a list from all rows of each 
+    dataframes 
 
+    args:
+        csvs - dictionary of all .csv files
+        with key as filename and value as the dataframe
+        read by pd.read_csv()
+    """
+    outputs = []
+    for dataset_name, df in csvs.items():
+        # REFORMAT DATE
+        print(f'processing: {dataset_name}')
+        # note that columns in df.columns are strings extracts the
+        # indeces that contain the string date in the columsn of a df 
+        date_cols = [col for col in df.columns.to_list() if "date" in str(col).lower() or "time" in str(col).lower()]
+        # print(date_cols)
+        
+        # however many columns we preprocesses these date columns
+        # such that it can be readable
+        def reformat_date(date):
+
+            datetime_obj = parser.parse(date)
+            year = datetime_obj.year
+            month = datetime_obj.month
+            day = datetime_obj.day
+            combined_date = f'{day} {month} {year}'
+            reformed_date = dt.datetime.strptime(combined_date, '%d %m %Y').strftime('%B %#d %Y')
+            
+            return reformed_date
+
+        # apply reformating function on all columns with date
+        for date_col in date_cols:
+            df[date_col] = df[date_col].apply(reformat_date)
+
+        # REMOVES any column that has substring or resembling an `id` or `unnamed: <int>` columns
+        cols_to_del = [col for col in df.columns.to_list() if bool(re.search(r"id|Id|ID$", str(col))) or bool(re.search(r"[Uu]nnamed:\s[0-9]*", str(col)))]
+        df.drop(columns=cols_to_del, inplace=True)
+
+        # COHERE ALL COLUMNS INTO ONE COHERENT MESSAGE
+        df['message'] = df.apply(cohere, axis=1)
+
+        # Populate and save the generated messages
+        outputs.append((dataset_name, df['message'].to_list()))
+
+    return outputs
 
 def cohere(row):
     """
@@ -306,9 +356,10 @@ def normalize_and_clean(text):
     text = re.sub(r"https", " ", text)
     
     # duplicate whitespaces will be condensed into one
-    text = re.sub(r"\s{2,}", " ", text)
     text = re.sub(r"xa0", " ", text)
+    text = re.sub(r":", " ", text)
     text = text.strip()
+    text = re.sub(r"\s{2,}", " ", text)
     
     return text
 
