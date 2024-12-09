@@ -275,7 +275,7 @@ def normalize_and_clean(text):
     text = re.sub(r"\'ll", " will ", text) 
     
     text = re.sub(r"%", " percent ", text)
-    text = re.sub(r"!", " ! ", text)
+    text = re.sub(r"!", " ", text)
     text = re.sub(r"\/", " ", text)
     text = re.sub(r"\^", " ", text)
     text = re.sub(r"\+", " ", text)
@@ -307,6 +307,7 @@ def normalize_and_clean(text):
     
     # duplicate whitespaces will be condensed into one
     text = re.sub(r"\s{2,}", " ", text)
+    text = re.sub(r"xa0", " ", text)
     text = text.strip()
     
     return text
@@ -349,6 +350,9 @@ def clean_and_split_data(name, data, output_dir: str | None=None, char_limit: in
 
     # Process each row to enforce character limits
     output_lines = []
+    # filter data list for any empty string
+    data = list(filter(lambda line: not (line == ''), data))
+    # print(data)
     for line in data:
         line = cleaner(line)
         print(line)
