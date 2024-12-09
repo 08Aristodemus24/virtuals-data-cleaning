@@ -51,117 +51,8 @@ def line_valid(text):
     match_2 = re.match(pattern_2, text)
     str_value_exists = not bool(match_2)
     return str_key_exists and str_value_exists
-    
 
-def clean_and_split_data(input_path: str, output_dir: str, char_limit: int=700, max_rows: int=40):
-    """
-    Cleans and splits text data:
-    - Removes numbering at the start of lines.
-    - Converts text to lowercase.
-    - Splits each row to ensure it doesn't exceed the character limit.
-    - Outputs multiple files if the number of rows exceeds max_rows.
-    """
 
-    # # test out cognitive core 12 file first
-    # if "Core 11" not in input_path:
-    #     print(f"input_path: {input_path} skipped")
-    #     return
-
-    # helper function to split the lines into chunks of char_limit (700) lines
-    def split_into_chunks(text, limit):
-        """
-        Splits a text into chunks no larger than the character limit.
-        
-
-        e.g "  "description": "Oracle-X is a...knowledge."," is a string
-        or line that may ocntain 700+ characters 
-        """
-        
-        chunks = []
-
-        # if the length of line is bigger than limit i.e. 900 > 700
-        # then the line is sliced into 700 character strings
-        # and the next slice i.e. 700:900 or [700] to [899] is now set
-        # as the next string to be processed but since slice [700] to [899]
-        # length of 200 is now less than limit of 700 loop is terminated
-        # and the final 200 characters are appended to the chunks list
-        while len(text) > limit:
-            chunks.append(text[:limit].strip())
-            text = text[limit:]
-        if text:
-            chunks.append(text.strip())
-
-        # chunks = [<chunk 1 of 700 char string>, <chunk 2 of 700 char string>, ..., <chunk n of <=700 char string>]
-        return chunks
-
-    # Read and clean the data
-    with open(input_path, 'r', encoding='utf-8', errors='replace') as file:
-        data = file.readlines()
-
-    # Process each row to enforce character limits
-    output_lines = []
-    for line in data:
-        # sample lines
-        # "name": "Oracle-X"
-        # "description": "Oracle-X is a...knowledge."
-
-        # Convert to lowercase and remove extra spaces
-        line = line.strip().lower()
-
-        # Remove numbering period, parenthesis, whitespace
-        line = re.sub(r'^\d+[\.\)]?\s*', '', line)
-
-        # replace all occurences of \n or \\n with whitespace
-        line = re.sub(r'\\n', ' ', line)
-        
-        if not line_valid(line):
-            continue
-
-        # extract corresponding value from key of
-        # valid line by removing key
-        line = re.sub(r'"[A-Za-zA-Za-z0-9!@#$%^&*()_+\-=\[\]{};:"\\|,.<>\/?]*":\s', '', line)
-
-        # remove trailing ',' at the end of each valid line
-        line = line.rstrip(',')
-
-        # final strip
-        line = line.strip()
-
-        # remove first and alst occurence of '"' chars
-        line = line[1:-1] if line.startswith('"') and line.endswith('"') else line
-        
-        print(f"valid line: {line}")
-        
-
-        output_lines.extend(split_into_chunks(line, char_limit))
-
-    # Write to multiple files if necessary
-    base_name = os.path.splitext(os.path.basename(input_path))[0]
-    os.makedirs(output_dir, exist_ok=True)
-
-    
-    for i in range(0, len(output_lines), max_rows):
-        """
-        if there were 100 output lines and we wanted only
-        40 lines per file, we would increment from
-        0:0+40 or [0] to [39]
-        40:40+40 or [40] to [79]
-        80:80+40 or [80] to [119] 
-        
-        but in slicing arrays 
-        when an array is only of a certain length and our end 
-        index exceeds it we only really get the slice until the end of the array 
-        so in essence we get only [80] to [99]
-        """
-        chunk = output_lines[i:i + max_rows]
-
-        """40 is the max amount of rows"""
-        output_file = os.path.join(output_dir, f"{base_name}_processed_part{i // max_rows + 1}.txt")
-        print(f"output file: {output_file}")
-        with open(output_file, 'w', encoding='utf-8') as file:
-            file.writelines(line + '\n' for line in chunk)
-
-        print(f"File {output_file} has been created with {len(chunk)} lines.")
 
 def convert_csv_to_txt(csv_path, txt_path, char_limit=700):
     """Converts a CSV file to a TXT file, enforcing a character limit per row."""
@@ -407,7 +298,7 @@ def normalize_and_clean(text):
     text = re.sub(r"[^A-Za-z0-9^,!.\/'+-=]", " ", text)
 
     # remove any number that exeeds more than 4 digits
-    # text = re.sub(r"[0-9]{5,}", " ", text)
+    text = re.sub(r"[0-9]{10,}", " ", text)
     # text = re.sub(r",", " ", text)
 
     # removes any colon preceded by an https or http
@@ -419,3 +310,77 @@ def normalize_and_clean(text):
     text = text.strip()
     
     return text
+
+
+
+def clean_and_split_data(name, data, output_dir: str | None=None, char_limit: int=700, max_rows: int=40, cleaner=normalize_and_clean):
+    """
+    Cleans and splits text data:
+    - Removes numbering at the start of lines.
+    - Converts text to lowercase.
+    - Splits each row to ensure it doesn't exceed the character limit.
+    - Outputs multiple files if the number of rows exceeds max_rows.
+    """
+    def split_into_chunks(text, limit):
+        """
+        Splits a text into chunks no larger than the character limit.
+        
+
+        e.g "  "description": "Oracle-X is a...knowledge."," is a string
+        or line that may ocntain 700+ characters 
+        """
+        
+        chunks = []
+
+        # if the length of line is bigger than limit i.e. 900 > 700
+        # then the line is sliced into 700 character strings
+        # and the next slice i.e. 700:900 or [700] to [899] is now set
+        # as the next string to be processed but since slice [700] to [899]
+        # length of 200 is now less than limit of 700 loop is terminated
+        # and the final 200 characters are appended to the chunks list
+        while len(text) > limit:
+            chunks.append(text[:limit].strip())
+            text = text[limit:]
+        if text:
+            chunks.append(text.strip())
+
+        # chunks = [<chunk 1 of 700 char string>, <chunk 2 of 700 char string>, ..., <chunk n of <=700 char string>]
+        return chunks
+
+    # Process each row to enforce character limits
+    output_lines = []
+    for line in data:
+        line = cleaner(line)
+        print(line)
+        output_lines.extend(split_into_chunks(line, char_limit))
+
+    # Write to multiple files if necessary
+    base_name = name
+
+    
+    if output_dir != None:
+        # if output already exists use that folder (meaning don't overwrite)
+        os.makedirs(output_dir, exist_ok=True)
+
+        for i in range(0, len(output_lines), max_rows):
+            """
+            if there were 100 output lines and we wanted only
+            40 lines per file, we would increment from
+            0:0+40 or [0] to [39]
+            40:40+40 or [40] to [79]
+            80:80+40 or [80] to [119] 
+            
+            but in slicing arrays 
+            when an array is only of a certain length and our end 
+            index exceeds it we only really get the slice until the end of the array 
+            so in essence we get only [80] to [99]
+            """
+            chunk = output_lines[i:i + max_rows]
+
+            """40 is the max amount of rows"""
+            output_file = os.path.join(output_dir, f"{base_name}_processed_part{i // max_rows + 1}.txt")
+            print(f"output file: {output_file}")
+            with open(output_file, 'w', encoding='utf-8') as file:
+                file.writelines(line + '\n' for line in chunk)
+
+        print(f"File {output_file} has been created with {len(chunk)} lines.")
