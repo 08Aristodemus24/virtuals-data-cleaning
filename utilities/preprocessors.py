@@ -355,11 +355,14 @@ def normalize_and_clean(text):
     text = re.sub(r"(?<=https):", " ", text)
     text = re.sub(r"https", " ", text)
     
-    # duplicate whitespaces will be condensed into one
+    
     text = re.sub(r"xa0", " ", text)
     text = re.sub(r":", " ", text)
+
+    # duplicate whitespaces and other non alpha numeric chars will be condensed into one
+    text = re.sub(r"[\s!@#\$%\^&\*()_+-=\{\}\[\]\\\/,.\?]{2,}", " ", text)
     text = text.strip()
-    text = re.sub(r"\s{2,}", " ", text)
+    
     
     return text
 
@@ -401,13 +404,15 @@ def clean_and_split_data(name, data, output_dir: str | None=None, char_limit: in
 
     # Process each row to enforce character limits
     output_lines = []
-    # filter data list for any empty string
-    data = list(filter(lambda line: not (line == ''), data))
-    # print(data)
     for line in data:
+        # first stage preprocessing is cleaning unwanted characters per line
         line = cleaner(line)
-        print(line)
         output_lines.extend(split_into_chunks(line, char_limit))
+
+    # second stage of preprocessing will be filtering the cleaned
+    # data further for meaningless any single character per line
+    output_lines = list(filter(lambda line: not (line == '' or line == '\n' or line == ',' or line == '.' or line == ' '), output_lines))
+    print(output_lines)
 
     # Write to multiple files if necessary
     base_name = name

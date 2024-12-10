@@ -121,7 +121,7 @@ def read_txt_files(input_dir: str, files: list[str]) -> dict[list[str]]:
             data = file.readlines()
             file.close()
 
-        new_name = file_name.replace('.txt', '')
+        new_name = re.sub(r'.txt|.md$', '', file_name)
         return new_name, data
 
     # concurrently read and load all .json files

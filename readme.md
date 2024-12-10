@@ -143,14 +143,18 @@
 |- readme.md
 ```
 
+
+
 # Articles, Videos, Papers, Repositories:
 1. https://docs.google.com/spreadsheets/d/1jCNzUx48DYMRWCqT0GYb9JfrBPiCh0H4B-PH3pyNZSc/edit?usp=sharing 
 Feel free to add any other cleaning methods you deem necessary for the data. Also, in case the content is not in CSV or JSON format, please double-check the data to ensure it’s useful for character descriptions.
 
-2. https://whitepaper.virtuals.io/#co-ownership-of-ai-agents-in-entertainment-and-gaming
+2. https://whitepaper.virtuals.io/#co-ownership-of-ai-agents-in-entertainment-and-gaming - primer on agentic AI
 
-3. https://pathdao-my.sharepoint.com/personal/armielyn_virtuals_io/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Farmielyn%5Fvirtuals%5Fio%2FDocuments%2FIngestion&ga=1
-path to ingestion folder
+3. https://pathdao-my.sharepoint.com/personal/armielyn_virtuals_io/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Farmielyn%5Fvirtuals%5Fio%2FDocuments%2FIngestion&ga=1 - path to ingestion folder
+
+
+
 # To do:
 * preprocess data first
 - Remove unnecessary characters or inconsistencies within the data (e.g., special symbols, excess whitespace).
