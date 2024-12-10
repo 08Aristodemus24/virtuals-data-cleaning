@@ -12,6 +12,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 import os
 import re
+import shutil
 
 def element_exists(driver, by, path:str):
     """
@@ -24,7 +25,7 @@ def element_exists(driver, by, path:str):
         return False
     return True
 
-def rename_all(dir: str='C:/Users/LARRY/Documents/Scripts/virtuals-internship/Aavegotchi output'):
+def rename_all(dir: str='<drive name e.g. `C:`>:/Users/<user>/<dir>'):
     """
     
     """
@@ -35,3 +36,18 @@ def rename_all(dir: str='C:/Users/LARRY/Documents/Scripts/virtuals-internship/Aa
         source = os.path.join(dir, file)
         dest = os.path.join(dir, new_file)
         os.rename(source, dest)
+
+def copytree(src, dst, symlinks=False, ignore=None):
+    """
+    
+    """
+    # lists all the files and folders in directory
+    for item in os.listdir(src):
+        s = os.path.join(src, item)
+        d = os.path.join(dst, item)
+
+        # checks if file is a directory 
+        if os.path.isdir(s):
+            shutil.copytree(s, d, symlinks, ignore)
+        else:
+            shutil.copy2(s, d)

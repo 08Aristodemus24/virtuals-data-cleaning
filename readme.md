@@ -190,3 +190,11 @@ ORACLEX
 Sport Bettor AI
 Rain
 $Trust Me Bro
+Eliza
+askthesandwich
+
+
+# Notes:
+reject .jsons with gibberish numbers, booleans, etc.
+
+match dataset input output with description. if input is somehow not related to agents desc then reject it
