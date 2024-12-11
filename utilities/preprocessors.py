@@ -271,6 +271,7 @@ def normalize_and_clean(text):
     text = re.sub(r" US ", " american ", text)
     text = text.lower()
     text = re.sub(r"’", "'", text)
+    text = re.sub(r"“", '"', text)
     text = re.sub(r"i'm", "i am ", text)
 
     text = re.sub(r"don't", "do not ", text)
@@ -332,6 +333,7 @@ def normalize_and_clean(text):
     text = re.sub(r"\-", " ", text)
     text = re.sub(r"\=", " ", text)
     text = re.sub(r"'", " ", text)
+    text = re.sub(r'"', " ", text)
     text = re.sub(r"(\d+)(k)", r"\g<1>000", text)
     text = re.sub(r" u s ", " american ", text)
     text = re.sub(r"\0s", "0", text)
