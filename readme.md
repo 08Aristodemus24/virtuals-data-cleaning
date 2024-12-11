@@ -10,10 +10,9 @@
 4. run `conda list -e` to see list of installed packages. If pip is not yet installed run conda install pip, otherwise skip this step and move to step 5.
 5. navigate to directory containing the `requirements.txt` file.
 5. run `pip install -r requirements.txt` inside the directory containing the `requirements.txt` file
-6. after installing packages/dependencies run `python index.py` while in this directory to run app locally
 
 # App usage:
-1. control panel of app will have ff. inputs: raw eda signals
+1. 
 
 # File structure:
 ```
