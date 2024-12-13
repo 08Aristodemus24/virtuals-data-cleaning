@@ -163,12 +163,7 @@ Feel free to add any other cleaning methods you deem necessary for the data. Als
 * then try to validate if these dataset are ok
 * pag tapos na add mo sa excel spreadsheet yung status ng data preprocessing task mo
 * ito siguro yung output na kilangan
-```
-oracle-x
-oracle-x is a cutting-edge ai agent blending ancient wisdom with advanced intelligence to provide real-time blockchain and cryptocurrency insights. she actively tracks trends, engages with users, and shares credible updates, establishing herself as the most trusted ai agent for cryptocurrency knowledge.
-oracle-x embodies elegance and reliability, adorned in a flowing white robe with intricate gold patterns. her radiant golden aura symbolizes clarity, wisdom, and trust.
-represents trust, enlightenment, and intelligence within a dynamic and complex ecosystem.
-```
+* create .sh script in python that is able to output this .sh script and when run, runs the command `node rag.js --input <myfile.txt> --agent <agent_id> --token <app_token> --bucket <bucket>` for all cleaned files, input is name of file and how many times you want this file to be run e.g. `node rag.js --input sportsbettoai1.txt --token 4065 --bucket finance` still take in as input the token arg, agent id arg, bucket arg, range, and name of input file. Output should be .sh file with name `{agent}_ingestor.sh`
 
 
 # Insights:
@@ -180,20 +175,29 @@ represents trust, enlightenment, and intelligence within a dynamic and complex e
 * I would assume oracle-x learns from information from the stock market etc.
 * fine tuning a model entails that it learns on a specific dataset revolving around a certain domain i.e. healthcare, investment, tech, literature
 
-# Skipped
+# Skipped:
 
-# Completed:
+# Cleaned:
 SisiyphusAI
 ROron-ron
 ORACLEX
 Sport Bettor AI
 Rain
-$Trust Me Bro
+Trust Me Bros
 Eliza
-askthesandwich
+askthesandwic
+
+# Ingested:
+HadesAI
+Sport Bettor AI 11720 left to ingest stopped at 15
+Trust Me Bros
+Ask the sandwich
+Eliza (rejected)
 
 
 # Notes:
-reject .jsons with gibberish numbers, booleans, etc.
+- reject .jsons with gibberish numbers, booleans, etc.
+- match dataset input output with description. if input is somehow not related to agents desc then reject it
+- try to store output files or is it raw input files in database para di magkadoble doble
 
-match dataset input output with description. if input is somehow not related to agents desc then reject it
+
