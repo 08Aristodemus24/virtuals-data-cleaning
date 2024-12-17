@@ -16,129 +16,23 @@
 
 # File structure:
 ```
-|- client-side
-    |- public
-    |- src
-        |- assets
-            |- mediafiles
-        |- boards
-            |- *.png/jpg/jpeg/gig
-        |- components
-            |- *.svelte/jsx
-        |- App.svelte/jsx
-        |- index.css
-        |- main.js
-        |- vite-env.d.ts
-    |- index.html
-    |- package.json
-    |- package-lock.json
+|- utilities
+    |- __init__.py
+    |- loaders.py
+    |- preprocessors.py
+    |- utilities.py
+|- download_data.py
+|- *output
     |- ...
-|- server-side
-    |- modelling
-        |- data
-            |- Artifact Detection Data
-                |- test
-                    |- *_features.csv
-                    |- *_labels.csv
-                |- train
-                    |- *_features.csv
-                    |- *_labels.csv
-                |- reduced_cueva_second_phase_svm_feature_set1.txt
-                |- reduced_cueva_second_phase_svm_feature_set.txt
-                |- hossain_feature_set.txt
-                |- reduced_hossain_lr_feature_set.txt
-                |- reduced_hossain_gbt_feature_set.txt
-                |- reduced_hossain_svm_feature_set.txt
-                |- taylor_feature_set.txt
-                |- reduced_taylor_lr_feature_set.txt
-                |- reduced_taylor_rf_feature_set.txt
-                |- reduced_taylor_svm_feature_set.txt
-            |- Electrodermal Activity artifact correction BEnchmark (EDABE)
-                |- Train
-                    |- *.csv
-                |- Test
-                    |- *.csv
-            |- Hybrid Artifact Detection Data
-                |- train
-                    |- *_hof.csv
-                    |- *_lof.csv
-                    |- *_labels.csv
-                |- test
-                    |- *_hof.csv
-                    |- *_lof.csv
-                    |- *_labels.csv
-                |- dummy.txt
-            |- Hosseini_Stress_Dataset
-            |- Stress Detection Features
-            |- dummy.txt
-            |- EDABE dataset.zip
-            |- Stress_dataset.zip
-        |- figures & images
-            |- *.png/jpg/jpeg/gif
-        |- models
-            |- __init__.py
-            |- cueva.py
-            |- llanes_jurado.py
-        |- results
-            |- all_models_results.json
-            |- hossain_gbt_results.json
-            |- hossain_lr_results.json
-            |- hossain_svm_results.json
-            |- taylor_rf_results.json
-            |- taylor_lr_results.json
-            |- taylor_svm_results.json
-            |- pqbqpr_expert2_corrected.csv
-        |- saved
-            |- misc
-                |- cueva_lstm-fe_meta_data.json
-                |- jurado_lstm-cnn_meta_data.json
-                |- hossain_lr_scaler.pkl
-                |- hossain_svm_scaler.pkl
-                |- hossain_gbt_scaler.pkl
-                |- xgb_scaler.pkl
-                |- dummy.pkl
-            |- models
-                |- cueva_second_phase_svm_clf1.pkl
-                |- cueva_second_phase_svm_clf.pkl
-                |- hossain_lr_clf.pkl
-                |- hossain_svm_clf.pkl
-                |- hossain_gbt_clf.pkl
-                |- taylor_lr_clf.pkl
-                |- taylor_svm_clf.pkl
-                |- taylor_rf_clf.pkl
-                |- stress_detector.pkl
-                |- dummy.pkl
-            |- weights
-                |- *.weights.h5
-        |- utilities
-            |- __init__.py
-            |- loaders.py
-            |- preprocessors.py
-            |- visualizers.py
-            |- evaluators.py
-            |- feature_extractors.py
-            |- stress_feature_extractors.py
-        |- __init__.py
-        |- experimentation.ipynb
-        |- feature_engineering.ipynb
-        |- data_analysis.ipynb
-        |- summarization.ipynb
-        |- evaluation.ipynb
-        |- visualization.ipynb
-        |- stress_detection.py
-        |- tuning_ml.py
-        |- tuning_dl.py
-        |- *.sbatch
-    |- static
-        |- assets
-            |- *.js
-            |- *.css
-        |- index.html
-    |- index.py
-    |- server.py
-    |- requirements.txt
-|- demo-video.mp5
+|- * input
+    |- ...
+|- .env
 |- .gitignore
+|- upload_changes.sh
+|- requirements.txt
+|- github-recovery-codes.txt
+|- ELIZA.ipynb
+|- rain.ipynb
 |- readme.md
 ```
 
@@ -174,6 +68,7 @@ Feel free to add any other cleaning methods you deem necessary for the data. Als
 * data used by LLMs may be instruction based or knowledge based 
 * I would assume oracle-x learns from information from the stock market etc.
 * fine tuning a model entails that it learns on a specific dataset revolving around a certain domain i.e. healthcare, investment, tech, literature
+* `git branch <branch name>`, `git checkout <branch name you created>`, `git add . & git commit -m "<mesage>" & git push origin <branch name you created>`
 
 # Skipped:
 
@@ -189,7 +84,7 @@ askthesandwic
 
 # Ingested:
 HadesAI
-Sport Bettor AI 11720 left to ingest stopped at 15
+Sport Bettor AI 11720 left to ingest stopped at 3689
 Trust Me Bros
 Ask the sandwich
 Eliza (rejected)
