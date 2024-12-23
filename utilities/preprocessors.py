@@ -235,7 +235,13 @@ def extract_keys_values(file: dict):
     """
     extracts all information in nested dictionaries including
     key and value pair, recursively
+
+    outputs a list containing all the keys and their
+    respective values found in the .json file as a formatted string
+    e.g. {'description': 'nothing', 'values': ['smart', 'creative']} -> 
+    ['description is nothing', 'values is smart creative']
     """
+    
     try:    
         non_dict_vals = []
 
@@ -265,6 +271,11 @@ def extract_keys_values(file: dict):
 
         
 def normalize_and_clean(text):
+    """
+    normalizes text by converting short hand form of
+    words into long hand versions e.g. couldn't -> could not
+    for easier to understand and coherent text
+    """
     text = str(text)
 
     # standardization and normalization
