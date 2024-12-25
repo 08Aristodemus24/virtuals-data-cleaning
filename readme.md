@@ -85,6 +85,7 @@ documentation: https://virtualprotocol.notion.site/GAME-Documentation-1592d2a429
 * I would assume oracle-x learns from information from the stock market etc.
 * fine tuning a model entails that it learns on a specific dataset revolving around a certain domain i.e. healthcare, investment, tech, literature
 * `git branch <branch name>`, `git checkout <branch name you created>`, `git add . & git commit -m "<mesage>" & git push origin <branch name you created>`
+* `git checkout master`, `git merge <branch name you created e.g. michael>`
 * GAME can be used through the agent sandbox (https://game-lite.virtuals.io/)
 
 ## creating agents as a simulation: 
