@@ -74,7 +74,8 @@ documentation: https://virtualprotocol.notion.site/GAME-Documentation-1592d2a429
 * answer questions in the #all-chat and #builder-chat channels
 * observe tickets channels on how to answer questions there 
 * if someone asks to change their tag direct the question to Aemyn
-* builders or creators of AI agents submit tickets or requests about their concern through the dev support channel
+* builders or creators of AI agents submit tickets or requests about their concern through the dev-support channel
+* 
 
 # Insights:
 * no need to prompt AI agents
