@@ -46,22 +46,35 @@ Feel free to add any other cleaning methods you deem necessary for the data. Als
 
 3. https://pathdao-my.sharepoint.com/personal/armielyn_virtuals_io/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Farmielyn%5Fvirtuals%5Fio%2FDocuments%2FIngestion&ga=1 - path to ingestion folder
 
-4.
-https://game-lite.virtuals.io/ 
+4. 
+main application to simulate an AI agent and their behavior: https://game-lite.virtuals.io/ 
 documentation: https://virtualprotocol.notion.site/GAME-Documentation-1592d2a429e98016b389ea26b53686a3#15b2d2a429e980af9d18dad399a8eed1
-5. 
+
+5. public FAQ: https://virtualprotocol.notion.site/Public-GAME-Frequently-Asked-Questions-FAQ-s-1662d2a429e9807e804dfc2b09fcf620#1662d2a429e980839f33f7045626c828
+
+6. 
 
 # To do:
-* preprocess data first
+## Backend Tasks:
+* <s>preprocess data first</s>
 - Remove unnecessary characters or inconsistencies within the data (e.g., special symbols, excess whitespace).
 - Ensure each text file contains a maximum of 40 rows. If a file exceeds this limit, split it into multiple files (e.g., file_part1.txt, file_part2.txt, etc.).
 - Limit each row to a maximum of 700 characters to ensure compatibility with Retrieval-Augmented Generation (RAG) processes.
 - Reject or exclude duplicate or irrelevant data that may not be useful for character descriptions or does not provide additional value.
-* then try to validate if these dataset are ok
-* pag tapos na add mo sa excel spreadsheet yung status ng data preprocessing task mo
-* ito siguro yung output na kilangan
-* create .sh script in python that is able to output this .sh script and when run, runs the command `node rag.js --input <myfile.txt> --agent <agent_id> --token <app_token> --bucket <bucket>` for all cleaned files, input is name of file and how many times you want this file to be run e.g. `node rag.js --input sportsbettoai1.txt --token 4065 --bucket finance` still take in as input the token arg, agent id arg, bucket arg, range, and name of input file. Output should be .sh file with name `{agent}_ingestor.sh`
+* <s>then try to validate if these dataset are ok</s>
+* <s>pag tapos na add mo sa excel spreadsheet yung status ng data preprocessing task mo</s>
+* <s>ito siguro yung output na kilangan</s>
+* <s>create .sh script in python that is able to output this .sh script and when run, runs the command `node rag.js --input <myfile.txt> --agent <agent_id> --token <app_token> --bucket <bucket>` for all cleaned files, input is name of file and how many times you want this file to be run e.g. `node rag.js --input sportsbettoai1.txt --token 4065 --bucket finance` still take in as input the token arg, agent id arg, bucket arg, range, and name of input file. Output should be .sh file with name `{agent}_ingestor.sh`</s>
 
+## Customer Relations:
+* questions you need to review how to answer in the FAQ documentation 
+- How to create Agent?
+- How to activate your Agent on x?
+- How to locate the sandbox? go to https://app.virtuals.io/ and then locate the button try G.A.M.E. on the upper right corner of the web application which will take you to the url https://game-lite.virtuals.io/
+* answer questions in the #all-chat and #builder-chat channels
+* observe tickets channels on how to answer questions there 
+* if someone asks to change their tag direct the question to Aemyn
+* builders or creators of AI agents submit tickets or requests about their concern through the dev support channel
 
 # Insights:
 * no need to prompt AI agents
@@ -208,7 +221,84 @@ ah so these agents you create in teh GAME ui are not actually agents that you ha
 
 Simulation lang pala siya di pa pala siya talaga full fledged agent that can live on twitter or any environment aboutu perhaps crypto, finacne, health, in twitter. So yung UI pala na ito just supports simulation of agents as if they are already up and 
 
-This relies heavily on prompt engineering and the quality of the prompts, so make sure the prompts you enter in the agent goal, agent description, and agent world information fields must be of quality 
+This relies heavily on prompt engineering and the quality of the prompts, so make sure the prompts you enter in the agent goal, agent description, and agent world information fields must be of quality
+
+
+## what does it mean for a web app to have no onchain like dexscreener?
+In the context of a web application like Dexscreener, "no on-chain" means that the application **primarily relies on off-chain data** and computations rather than directly interacting with a blockchain for every operation.
+
+Here's a breakdown:
+
+On-Chain:
+Data Storage: Data is stored directly on the blockchain, making it immutable and transparent **think of it as something everyone can see but they can't access or do things to it but they can indeed see it kasi there is always the risk that if they did have access to it they may use it in a malicious manner**.
+Transactions: Transactions are recorded and verified on the blockchain.
+Decentralization: Operations are typically decentralized, meaning no single entity controls the data or processes.   
+
+Off-Chain:
+Data Storage: Data is **stored on traditional servers or databases (where large companies own them e.g. aws, microsoft, google)**.
+Computations: Calculations and **data processing occur on centralized servers (owned by large companies again)**.
+Centralization: Some level of centralization is involved in managing the application and its data.
+
+How Dexscreener Works (Primarily Off-Chain):
+
+Dextscreener aggregates data from various sources, including:
+
+Blockchain Explorers: It pulls data about token prices, trading volume, and market capitalization from blockchain explorers.
+**Decentralized Exchanges (DEXs)** APIs: It uses APIs provided by DEXs to access real-time trading data.
+This data is then processed and displayed on the Dexscreener website. While the underlying data originates from blockchains, Dexscreener doesn't perform every calculation or data retrieval directly on the blockchain.
+
+Advantages of an Off-Chain Approach (like Dexscreener):
+
+Speed: Off-chain computations are generally much faster than on-chain operations.   
+Scalability: Handling large amounts of data and user traffic is more efficient off-chain.   
+Cost-Effectiveness: Off-chain operations are typically cheaper than on-chain transactions, which incur gas fees.   
+Disadvantages of an Off-Chain Approach:
+
+Centralization: There's a degree of centralization, as Dexscreener controls the servers and data processing.
+Trust: Users rely on Dexscreener to provide accurate and reliable data.
+In Summary:
+
+Dexscreener, by being primarily off-chain, prioritizes speed, scalability, and cost-effectiveness. It acts as an aggregator and presenter of blockchain data rather than a fully decentralized on-chain application. This allows it to provide a user-friendly experience for tracking and analyzing crypto assets.
+
+## what are off chain data anyway? Explain it to me a relatively good programmer with knowledge in developing simple APIs intgrated to ML models.
+
+Let's break down "off-chain data" in a way that's relatable to a programmer familiar with APIs and ML models.
+
+Analogy: Think of a restaurant
+
+On-chain: This is like the **restaurant's kitchen**. All the **core operations** happen here: **cooking the food (executing smart contracts)**, **storing ingredients (blockchain data)**, and serving the dishes (transactions). Everything is **transparent** and verifiable, but it **can be slow and expensive** (like gas fees on a blockchain).
+
+Off-chain: This is like the **restaurant's dining area**, the **menu**, the **reservation system**, and the **customer database**. These **are separate systems that interact with the kitchen** (on-chain) but **handle a lot of the work independently (outside of the kitchen)**.
+
+In the context of blockchain and web3:
+
+**On-chain data (the food ingredients) resides directly on the blockchain (the kitchen)**. **Every transaction (serving dishes)**, **smart contract execution (cooking food)**, and **piece of information (ingredients)** is recorded and stored on the distributed ledger. It's immutable, transparent, and verifiable by anyone with access to the blockchain.
+
+**Off-chain data lives outside the blockchain (the kitchen)**, typically **in traditional databases**, **servers**, or other storage systems. It's managed and controlled by specific entities, which can be centralized or decentralized. **Isipin mo yung on chain data is stored in a decentralized system where no corporation, organization, has control over it and anyone and everyone has control over it unlike relational dbs, servers, which are managed by corporations, organizations, think google, amazon, microsoft etc.**
+
+Relating to APIs and ML models:
+
+Imagine you're building a price prediction model for a cryptocurrency.
+
+On-chain data: This would be the raw transaction data on the blockchain: block timestamps, transaction hashes, amounts transferred, etc. Accessing this data directly for every prediction would be extremely inefficient and expensive.
+
+Off-chain data: This could be:
+Historical price data: Stored in a time-series **database (owned by amazon)**.
+Market sentiment data: Collected from social media or **news sources (owned by new york times, time, new york post, washington post)** and stored in a database.
+Technical indicators: Calculated off-chain using historical price data.
+How your API and ML model interact with off-chain data:
+
+Data Collection: You would use APIs (e.g., from exchanges or data providers) to collect historical price data, market sentiment, and other relevant **information (that may be owned by different organizations and corporations)**. This data is **stored in your off-chain database**.
+Feature Engineering: Your ML model would use this off-chain data to calculate features like moving averages, volatility, or sentiment scores.
+Model Training: You train your ML model using this off-chain data.
+Prediction: When a user requests a price prediction, your API would:
+Fetch the latest relevant off-chain data.
+Use the trained ML model to generate a prediction.
+Return the prediction to the user.
+
+In Dexscreener's case: They use off-chain data (from DEX APIs and blockchain explorers) to provide real-time price charts and market analysis. They don't execute trades or store order books on-chain.
+
+Using off-chain data is a common and practical approach for many web3 applications, allowing for better performance and user experience while still leveraging the underlying blockchain for core functionalities.
 
 # Skipped:
 
