@@ -75,7 +75,30 @@ documentation: https://virtualprotocol.notion.site/GAME-Documentation-1592d2a429
 * observe tickets channels on how to answer questions there 
 * if someone asks to change their tag direct the question to Aemyn
 * builders or creators of AI agents submit tickets or requests about their concern through the dev-support channel
-* 
+* Ifmay magtanong sa builders-chat or sa all-chat and raised a concern ask them to raise a ticket: `for those who are experiencing issue with the sandbox that hasn't raised yet a ticket. please do send it make sure follow the format of ticket format here. dev-support`
+* see what dominant issues builders face, from tickets 240 - 260
+240 - sandbox activation failed when Configure in Sandbox is clicked to have agent start tweeting
+ticket 242 - sandbox activation failed
+ticket 243 - sandbox activation failed
+ticket 244 - sandbox activation failed
+ticket 245 - 
+ticket 246 - unable to change bio of the agent. After clicking "configure agent" bio appears to be read only (greyed out/can't edit)
+ticket 247 - trying to change profile picture and description of agent. Description not yet changed
+ticket 248 - sandbox activation failed
+ticket 249 - created new version of previous agent, builder asks if the agent gets information about posts of the old agent on same twitter account
+ticket 250 - sandbox activation failed
+ticket 251 - 
+ticket 252 - accidentally sent $1k (0.28 ethereum) to trust contact address. Directed to unseen_wonkie (telegram)/@J. Edgard Blockchain (discord)
+ticket 253 - builder never transferred, listed, staked MAYC for 6 months in wallet. Directed to unseen_wonkie (telegram)/@NonFungibleToes (discord)
+ticket 254 - asked to link x account to new x account https://x.com/WhatIsEG0
+ticket 255 - created prototype agent and wanted to move it to sentient agent. Directed builder to #guides channel
+ticket 256 - 
+ticket 257 - 
+ticket 258 - 
+ticket 259 - 
+ticket 260 - 
+* for linking automated accounts like agents on X so that agents could automatically now post tweets and move about their environment, what they should first do is label automated x account. Details are Label automated your x account https://devcommunity.x.com/t/introducing-automated-account-labeling/166830
+* A builder can either create a sentient agent that can automatically move about and post tweets on X or a prototype agent. 
 
 # Insights:
 * no need to prompt AI agents
