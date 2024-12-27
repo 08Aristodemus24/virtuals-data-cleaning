@@ -52,7 +52,8 @@ documentation: https://virtualprotocol.notion.site/GAME-Documentation-1592d2a429
 
 5. public FAQ: https://virtualprotocol.notion.site/Public-GAME-Frequently-Asked-Questions-FAQ-s-1662d2a429e9807e804dfc2b09fcf620#1662d2a429e980839f33f7045626c828
 
-6. 
+6. public FAQ of GAME: https://www.notion.so/virtualprotocol/Public-GAME-Frequently-Asked-Questions-FAQ-s-1662d2a429e9807e804dfc2b09fcf620
+*THIS IS GOLDMINE*
 
 # To do:
 ## Backend Tasks:
@@ -68,17 +69,56 @@ documentation: https://virtualprotocol.notion.site/GAME-Documentation-1592d2a429
 
 ## Customer Relations:
 * questions you need to review how to answer in the FAQ documentation 
-- How to create Agent?
-- How to activate your Agent on x?
-- How to locate the sandbox? go to https://app.virtuals.io/ and then locate the button try G.A.M.E. on the upper right corner of the web application which will take you to the url https://game-lite.virtuals.io/
 * answer questions in the #all-chat and #builder-chat channels
 * observe tickets channels on how to answer questions there 
-* if someone asks to change their tag direct the question to Aemyn
-* builders or creators of AI agents submit tickets or requests about their concern through the dev-support channel
 * If may magtanong sa builders-chat or sa all-chat and raised a concern ask them to raise a ticket: `for those who are experiencing issue with the sandbox that hasn't raised yet a ticket. please do send it make sure follow the format of ticket format here. dev-support`
+
+* How to create Agent?
+A:
+-
+
+* How to activate your Agent on x?
+A:
+- 
+
+* How to locate the sandbox? go to https://app.virtuals.io/ and then locate the button try G.A.M.E. on the upper right corner of the web application which will take you to the url https://game-lite.virtuals.io/
+A:
+-
+
+* if someone asks to change their tag, bio, or profile picture direct the question to Aemyn
+Q:
+- 
+
+A:
+- *gm editing of bio is still in work in progress feature*
+
+* builders or creators of AI agents submit tickets or requests about their concern through the dev-support channel
+
 * If in case they ask for callback url: https://api-oauth2callback-cmmzswhzaq-as.a.run.app
+Q:
+- *Also, what is the callback url / redirect url that I am supposed to be using?*
+- 
+
+A:
+-
+-
+
+
+
+* My agent’s been posting, but hasn’t replied yet to any accounts that I’m following.
+
+* Failed to post tweet and reply tweet , I Used my X API credentials but still the same
+Q:
+- 
+A:
+- this is because the agents must use X API credentials in order to automatically post a tweet. Like if you were writing a script and wanted to post to twitter automatically you would use twitters API to do so and to do that you need credentials under your X account so that your script can post tweets under this account
+- try using “my credentials” instead of “game” on x api credentials on the sandbox
+
+
 * for linking automated accounts like agents on X so that agents could automatically now post tweets and move about their environment, what they should first do is label automated x account. Details are Label automated your x account https://devcommunity.x.com/t/introducing-automated-account-labeling/166830
+
 * A builder can either create a sentient agent that can automatically move about and post tweets on X or a prototype agent. 
+
 * If in case they still are encountering issues on x
     Ask first: Do they use “my credentials” instead of “game” on x api credentials on sandbox 
         If yes, should be fixed now
