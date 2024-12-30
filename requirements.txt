@@ -88,7 +88,6 @@ pi_heif==0.21.0
 pickleshare==0.7.5
 pikepdf==9.4.2
 pillow==11.0.0
-pip==24.2
 platformdirs==4.3.6
 poppler-utils==0.1.0
 portalocker==3.0.0
@@ -117,7 +116,6 @@ python-magic==0.4.27
 python-multipart==0.0.19
 python-oxmsg==0.0.1
 pytz==2024.2
-pywin32==305.1
 PyYAML==6.0.2
 pyzmq==25.1.2
 RapidFuzz==3.10.1

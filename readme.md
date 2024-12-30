@@ -112,8 +112,35 @@ Q:
 - 
 A:
 - this is because the agents must use X API credentials in order to automatically post a tweet. Like if you were writing a script and wanted to post to twitter automatically you would use twitters API to do so and to do that you need credentials under your X account so that your script can post tweets under this account
-- try using “my credentials” instead of “game” on x api credentials on the sandbox
+- try using “my credentials” instead of “game” on x api credentials on the sandbox becaues my credentials uses the X API keys you made.
+- try looking at the terminal, by asking the builder the link to their agent and see if what activity goes on their under the `planner module` and the `reaction module`
 
+* How to unstake your virtuals. So if you got to basescan and insert your wallet address, under token you should be able to find the token name that you staked.
+1. click on that token, you land on the token contract
+2. go to contract tab
+3. go read
+4. there is a function balanceOf, input put your wallet address, you will get the amount. copy that value
+5. to go write
+6. connect web3 wallet,
+7. under withdraw function, put that amount and hit withdraw you need to unstake them from the agent and these are the steps on how to do this
+
+* another common issue is adding image generation, if builder asks if there are external APIs to create a new function direct them to the SDK at github https://github.com/Virtual-Protocol/virtuals-python?tab=readme-ov-file. They can test this out in G.A.M.E. Lite as you can create a custom function where an API URL field can be filled up perhaps with the midjourney API, and with it an access key which you will have to fill via a payload
+```
+{
+    "method": "POST",
+    "headers": {
+        "Accept": "<accept header>",
+        "Authorization": "<your token>"
+    },
+    "body": {
+        ...
+    }
+}
+```
+
+* developer forum has been created in this discord channel here: https://discord.com/channels/1214528554197319690/1322790178200354867, where the builders can ask questions and have other builders answer them also, direct builders to this forum so other builders can potentially answer their questions.
+
+* If in any case the builder created an agent in official G.A.M.E. and didn't test it out first and he asked if he can delist his token that was used in the creation fo his agent tell them that we cannot delist or hide his agent because otherwise it will look rugged
 
 * for linking automated accounts like agents on X so that agents could automatically now post tweets and move about their environment, what they should first do is label automated x account. Details are Label automated your x account https://devcommunity.x.com/t/introducing-automated-account-labeling/166830
 
@@ -123,6 +150,11 @@ A:
     Ask first: Do they use “my credentials” instead of “game” on x api credentials on sandbox 
         If yes, should be fixed now
         If not, recommend them to use my credentials otherwise they will encounter rate limiting atm with game
+
+* if no activity on the ticket for 2 to 3 days close the ticket
+
+* as of now december 30 because of instability of X API they need to use G.A.M.E. credentials for now
+
 
 * see what dominant issues builders face, from tickets 240 - 260
 240 - sandbox activation failed when Configure in Sandbox is clicked to have agent start tweeting
