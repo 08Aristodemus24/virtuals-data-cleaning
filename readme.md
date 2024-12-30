@@ -223,27 +223,11 @@ A:
 
 * GAME lite is the sandbox and where you can play and test agents without paying and GAME is the official one where users can still play with the agent they indeed payed for and also test how it interacts with its environment or see how it functions on X 
 
-* see what dominant issues builders face, from tickets 240 - 260
-240 - sandbox activation failed when Configure in Sandbox is clicked to have agent start tweeting
-ticket 242 - sandbox activation failed
-ticket 243 - sandbox activation failed
-ticket 244 - sandbox activation failed
-ticket 245 - 
-ticket 246 - unable to change bio of the agent. After clicking "configure agent" bio appears to be read only (greyed out/can't edit)
-ticket 247 - trying to change profile picture and description of agent. Description not yet changed
-ticket 248 - sandbox activation failed
-ticket 249 - created new version of previous agent, builder asks if the agent gets information about posts of the old agent on same twitter account
-ticket 250 - sandbox activation failed
-ticket 251 - 
-ticket 252 - accidentally sent $1k (0.28 ethereum) to trust contact address. Directed to unseen_wonkie (telegram)/@J. Edgard Blockchain (discord)
-ticket 253 - builder never transferred, listed, staked MAYC for 6 months in wallet. Directed to unseen_wonkie (telegram)/@NonFungibleToes (discord)
-ticket 254 - asked to link x account to new x account https://x.com/WhatIsEG0
-ticket 255 - created prototype agent and wanted to move it to sentient agent. Directed builder to #guides channel
-ticket 256 - 
-ticket 257 - 
-ticket 258 - 
-ticket 259 - 
-ticket 260 - 
+* see what dominant issues builders face
+
+ticket 336
+ticket 333 - addding an API url from a external app, to GROK
+ticket 361 - 
 
 
 
