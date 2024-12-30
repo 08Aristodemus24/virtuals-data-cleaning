@@ -62,10 +62,123 @@ documentation: https://virtualprotocol.notion.site/GAME-Documentation-1592d2a429
 - Ensure each text file contains a maximum of 40 rows. If a file exceeds this limit, split it into multiple files (e.g., file_part1.txt, file_part2.txt, etc.).
 - Limit each row to a maximum of 700 characters to ensure compatibility with Retrieval-Augmented Generation (RAG) processes.
 - Reject or exclude duplicate or irrelevant data that may not be useful for character descriptions or does not provide additional value.
-* then try to validate if these dataset are ok
-* pag tapos na add mo sa excel spreadsheet yung status ng data preprocessing task mo
-* ito siguro yung output na kilangan
-* create .sh script in python that is able to output this .sh script and when run, runs the command `node rag.js --input <myfile.txt> --agent <agent_id> --token <app_token> --bucket <bucket>` for all cleaned files, input is name of file and how many times you want this file to be run e.g. `node rag.js --input sportsbettoai1.txt --token 4065 --bucket finance` still take in as input the token arg, agent id arg, bucket arg, range, and name of input file. Output should be .sh file with name `{agent}_ingestor.sh`
+* <s>then try to validate if these dataset are ok</s>
+* <s>pag tapos na add mo sa excel spreadsheet yung status ng data preprocessing task mo</s>
+* <s>ito siguro yung output na kilangan</s>
+* <s>create .sh script in python that is able to output this .sh script and when run, runs the command `node rag.js --input <myfile.txt> --agent <agent_id> --token <app_token> --bucket <bucket>` for all cleaned files, input is name of file and how many times you want this file to be run e.g. `node rag.js --input sportsbettoai1.txt --token 4065 --bucket finance` still take in as input the token arg, agent id arg, bucket arg, range, and name of input file. Output should be .sh file with name `{agent}_ingestor.sh`</s>
+
+## Customer Relations:
+* questions you need to review how to answer in the FAQ documentation 
+* answer questions in the #all-chat and #builder-chat channels
+* observe tickets channels on how to answer questions there 
+* If may magtanong sa builders-chat or sa all-chat and raised a concern ask them to raise a ticket: `for those who are experiencing issue with the sandbox that hasn't raised yet a ticket. please do send it make sure follow the format of ticket format here. dev-support`
+
+* How to create Agent?
+A:
+-
+
+* How to activate your Agent on x?
+A:
+- 
+
+* How to locate the sandbox? go to https://app.virtuals.io/ and then locate the button try G.A.M.E. on the upper right corner of the web application which will take you to the url https://game-lite.virtuals.io/
+A:
+-
+
+* if someone asks to change their tag, bio, or profile picture direct the question to Aemyn
+Q:
+- 
+A:
+- *gm editing of bio is still in work in progress feature*
+
+* builders or creators of AI agents submit tickets or requests about their concern through the dev-support channel
+
+* If in case they ask for callback url: https://api-oauth2callback-cmmzswhzaq-as.a.run.app
+Q:
+- *Also, what is the callback url / redirect url that I am supposed to be using?*
+- 
+A:
+-
+-
+
+* What is ascension?
+A:
+- when it means to ascend for an agent is that they need to have their loading bar be 100% completed (blue loading bar) in order to graduate and become sentient. For it to be fully loaded it must acquire 41.8k virtuals (virtuals is like the dollar or peso or currency used in virtuals.io)
+
+* what's the cost to graduate?
+A:
+- it's 41.6k $VIRTUAL. Note that the price continues to rise over time, so the market cap (MC) is only an approximation at any given moment.
+
+* The most important factor is the number of tokens left to be sold. Once all remaining tokens are sold or the 41.8k virtuals, the "red pill" will be activated. 
+
+* My agent’s been posting, but hasn’t replied yet to any accounts that I’m following.
+
+* anything relatd to agent failing to post tweets or not tweeting
+Q:
+- Failed to post tweet and reply tweet, I Used my X API credentials but still the same
+- agent is not tweeting
+A:
+- this is because the agents must use X API credentials (3 of the 4 credentials listed below) in order to automatically post a tweet. Like if you were writing a script and wanted to post to twitter automatically you would use twitters API to do so and to do that you need credentials under your X account so that your script can post tweets under this account
+- try using “my credentials” instead of “game” on X api credentials on the sandbox
+- you can ask their X agent link and see if it doess indeed tweet on X, or they can check the `terminal` under the `planner` to see the json response of the agent 
+- Step 1 is to of course have an X account by creating one, step 2 is Save your App's key and tokens and keep them secure
+Once you have access and have created a Project and App, you will be able to find or generate the following credentials within your developer App:
+
+1. API Key and Secret: Essentially the username and password for your App. You will use these to authenticate requests that require OAuth 1.0a User Context, or to generate other tokens such as user Access Tokens or App Access Token.
+
+2. Access Token and Secret: In general, Access Tokens represent the user that you are making the request on behalf of. The ones that you can generate via the developer portal represent the user that owns the App. You will use these to authenticate requests that require OAuth 1.0a User Context. If you would like to make requests on behalf of another user, you will need to use the 3-legged OAuth flow for them to authorize you. 
+
+3. Client ID and Client Secret: These credentials are used to obtain a user Access Token with OAuth 2.0 authentication. Similar to OAuth 1.0a, the user Access Tokens are used to authenticate requests that provide private user account information or perform actions on behalf of another account but, with fine-grained scope for greater control over what access the client application has on the user. 
+
+as the consumer API key field is there on the virtuals app to be filled up with the value of the API key you have (number 1)
+consumer API secret (also at number 1)
+access token (at number 2)
+access token secret (at number 2)
+
+client id and client secret for oauth2.0 for client id and client secret fieldss are usually greyed out in the apps
+
+then once the builder has created these credentials as opposed to GAME credentials, they need to enter these credentials within the sandbox x api cred page
+- see terminal if the agent is stuck. If so direct to maam aemyn that the agent needs to be refreshed
+
+* When tg bot is having a problem
+Q:
+- TG bot is still not responding
+A:
+-
+
+* for linking automated accounts like agents on X so that agents could automatically now post tweets and move about their environment, what they should first do is label automated x account. Details are Label automated your x account https://devcommunity.x.com/t/introducing-automated-account-labeling/166830
+
+* A builder can either create a sentient agent that can automatically move about and post tweets on X or a prototype agent. 
+
+* If in case they still are encountering issues on x
+    Ask first: Do they use “my credentials” instead of “game” on x api credentials on sandbox 
+        If yes, should be fixed now
+        If not, recommend them to use my credentials otherwise they will encounter rate limiting atm with game
+
+* GAME lite is the sandbox and where you can play and test agents without paying and GAME is the official one where users can still play with the agent they indeed payed for and also test how it interacts with its environment or see how it functions on X 
+
+* see what dominant issues builders face, from tickets 240 - 260
+240 - sandbox activation failed when Configure in Sandbox is clicked to have agent start tweeting
+ticket 242 - sandbox activation failed
+ticket 243 - sandbox activation failed
+ticket 244 - sandbox activation failed
+ticket 245 - 
+ticket 246 - unable to change bio of the agent. After clicking "configure agent" bio appears to be read only (greyed out/can't edit)
+ticket 247 - trying to change profile picture and description of agent. Description not yet changed
+ticket 248 - sandbox activation failed
+ticket 249 - created new version of previous agent, builder asks if the agent gets information about posts of the old agent on same twitter account
+ticket 250 - sandbox activation failed
+ticket 251 - 
+ticket 252 - accidentally sent $1k (0.28 ethereum) to trust contact address. Directed to unseen_wonkie (telegram)/@J. Edgard Blockchain (discord)
+ticket 253 - builder never transferred, listed, staked MAYC for 6 months in wallet. Directed to unseen_wonkie (telegram)/@NonFungibleToes (discord)
+ticket 254 - asked to link x account to new x account https://x.com/WhatIsEG0
+ticket 255 - created prototype agent and wanted to move it to sentient agent. Directed builder to #guides channel
+ticket 256 - 
+ticket 257 - 
+ticket 258 - 
+ticket 259 - 
+ticket 260 - 
+
 
 
 # Insights:
