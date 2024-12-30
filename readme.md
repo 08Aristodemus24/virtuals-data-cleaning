@@ -55,6 +55,9 @@ documentation: https://virtualprotocol.notion.site/GAME-Documentation-1592d2a429
 6. public FAQ of GAME: https://www.notion.so/virtualprotocol/Public-GAME-Frequently-Asked-Questions-FAQ-s-1662d2a429e9807e804dfc2b09fcf620
 *THIS IS GOLDMINE*
 
+7. developer forum discord channel: https://discord.com/channels/1214528554197319690/1322795296236900403/1322795296236900403 - where developers could interact with other developers or builders in order to answer each others question. If a builder has a technical query then they can be referred to post here their inquiry in order to potentially be answered by other developers
+8. 
+
 # To do:
 ## Backend Tasks:
 * <s>preprocess data first</s>
@@ -81,7 +84,7 @@ A:
 A:
 - 
 
-* How to locate the sandbox? go to https://app.virtuals.io/ and then locate the button try G.A.M.E. on the upper right corner of the web application which will take you to the url https://game-lite.virtuals.io/
+* How to locate the sandbox? go to https://app.virtuals.io/ and then locate the button try G.A.M.E. on the upper right corner of the web application which will take you to the url https://game-lite.virtuals.io/ 
 A:
 -
 
@@ -145,6 +148,69 @@ Q:
 - TG bot is still not responding
 A:
 -
+
+* When they want ot integrate multi modal funcitonalities for their agent like iamge generation
+Q: 
+- how can I have my agent generate an image
+A:
+- they can use API of let's say any image generation tool then they can input it within the custom functions also
+- Just like in the  G.A.M.E. lite snadbox they can have their agent have a custom function by using perhaps an API key and url from midjourney and have the agent of theirs do a POST request where the object would be:
+```
+{
+    "method": "POST",
+    "headers": {
+        "Accept": "<accept header>",
+        "Authorization": "<midjourney api token>"
+    }
+    "body": {
+        ... (raw data)
+    }
+    
+}
+```
+- if they're technical you can refer them to the SDK if they want to explore in creating more custom functionalities: https://github.com/Virtual-Protocol/virtuals-python
+
+* How to unstake your virtuals. So if you got to basescan and insert your wallet address, under token you should be able to find the token name that you staked.
+1. click on that token, you land on the token contract
+2. go to contract tab
+3. go read
+4. there is a function balanceOf, input put your wallet address, you will get the amount. copy that value
+5. to go write
+6. connect web3 wallet,
+7. under withdraw function, put that amount and hit withdraw you need to unstake them from the agent and these are the steps on how to do this
+
+* Why it's not tweeting and how to set up the API?
+- Set the API credential (My Credentials or GAME)
+- Set user authentication settings
+- Set to read/write
+- Callback url: https://api-oauth2callback-cmmzswhzaq-as.a.run.app
+  website url: Agent's page
+- Saved, client ID no need
+- Add new responses under X prompt configuration in Sandbox lower part(At least 5)
+- Redeploy to save changes
+- Monitor the Agent's behavior
+- If stuck, ask agent name or check terminal
+- If stuck in searching internet or not tweeting for long hours
+- Ask them to uncheck the search_function
+- If it already tweeted, ask them to recheck the search_function then it would be fine
+- If still fails to tweet
+- Inform Ms. Aem to refresh it
+- Further problems occur investigate it by asking more
+
+* If there are UI issues:
+- Ask them more about
+- Recommend them recording it by using jam.dev
+
+* If they want to change the PFP:
+- Ask the agent name
+- Ask the photo
+- Inform, Ms. Aem
+
+* If they want to change bio and description:
+- Inform them that we're still fixing it
+
+* If they encounter Telegram issues:
+- Inform them that we're looking and checking it as well
 
 * for linking automated accounts like agents on X so that agents could automatically now post tweets and move about their environment, what they should first do is label automated x account. Details are Label automated your x account https://devcommunity.x.com/t/introducing-automated-account-labeling/166830
 
