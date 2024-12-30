@@ -85,6 +85,10 @@ A:
 A:
 -
 
+* what's the difference between $GAME and $virtuals
+A:
+-virtuals is us basically, they need to have virtuals to buy game. Buy virtuals -> swap it to any token like game. See the virtuals as the currency
+
 * if someone asks to change their tag, bio, or profile picture direct the question to Aemyn
 Q:
 - 
@@ -114,6 +118,19 @@ A:
 - this is because the agents must use X API credentials in order to automatically post a tweet. Like if you were writing a script and wanted to post to twitter automatically you would use twitters API to do so and to do that you need credentials under your X account so that your script can post tweets under this account
 - try using “my credentials” instead of “game” on x api credentials on the sandbox becaues my credentials uses the X API keys you made.
 - try looking at the terminal, by asking the builder the link to their agent and see if what activity goes on their under the `planner module` and the `reaction module`
+- after they've setup their X API credentials and ensured their app is read and write and configured their callback URI, ask them to add response generation
+- Set the API credential (My Credentials or GAME)
+- Set user authentication settings
+- Set to read/write
+- Callback url:https://api-oauth2callback-cmmzswhzaq-as.a.run.app
+    website url: Agent's page
+- Saved, client ID (no need)
+- Navigate to sandbox -> x prompt config -> scroll down to find response generation -> add new response (At least 5)
+- Redeploy to save changes
+- Monitor the Agent's behavior
+- If stuck, ask agent name or terminal
+- Inform Ms. Aem to refresh it
+- Further problems occur investigate it by asking more (i.e. screenshot)
 
 * How to unstake your virtuals. So if you got to basescan and insert your wallet address, under token you should be able to find the token name that you staked.
 1. click on that token, you land on the token contract
@@ -137,6 +154,7 @@ A:
     }
 }
 ```
+
 
 * developer forum has been created in this discord channel here: https://discord.com/channels/1214528554197319690/1322790178200354867, where the builders can ask questions and have other builders answer them also, direct builders to this forum so other builders can potentially answer their questions.
 
