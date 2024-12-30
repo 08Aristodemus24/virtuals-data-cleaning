@@ -16,6 +16,10 @@ import io
 import pytesseract
 
 def extract_images_text(pdf):
+    """
+    works on any pdf file flattened or unflattened by
+    extracting any text or image with text within the pdf file
+    """
     # define path to tessearact executable
     pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
@@ -84,6 +88,16 @@ def extract_images_text(pdf):
 
 def read_files(input_dir, files):
     """
+    inspects the input directory of all types of files and outputs
+    a dictionary with all the files categorized/bucketed into their
+    different file types
+
+    args:
+        input_dir - is the directory of the files
+        files - a list containing the names of the files in the input
+        directory
+
+    output:
     {
         'jsons': {
             'dataset#234': {<jsonfile>},
