@@ -225,6 +225,17 @@ A:
 
 * see what dominant issues builders face
 
+* if any builder asks about issues not seeing updated accounts, manual link inputs, and forum chat not being able to be accessed it is because of the ff. direct them to #system-status channel for them to see
+
+GM, builders!
+
+To combat scam projects, we’ve made updates to social link displays:
+1. Only connected Twitter (X) and Telegram accounts are shown. For those experiencing issues with not seeing newly updated accounts, this has now been fixed.
+2. Manual link inputs (e.g., Twitter, Telegram, YouTube, Discord, Website) have been removed.
+3. Forum Chat has been discontinued due to spam vulnerabilities. We’ll notify you if it becomes available again once the spam issue is resolved.
+
+These changes are now live. Additionally, we’ve upgraded our infrastructure to resolve sandbox failures. If you encounter any issues, please let us know! 🚀
+
 ticket 336
 ticket 333 - addding an API url from a external app, to GROK
 ticket 361 - 
