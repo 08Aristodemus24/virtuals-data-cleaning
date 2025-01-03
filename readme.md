@@ -76,6 +76,24 @@ documentation: https://virtualprotocol.notion.site/GAME-Documentation-1592d2a429
 * observe tickets channels on how to answer questions there 
 * If may magtanong sa builders-chat or sa all-chat and raised a concern ask them to raise a ticket: `for those who are experiencing issue with the sandbox that hasn't raised yet a ticket. please do send it make sure follow the format of ticket format here. dev-support`
 
+* if they ask a question that is vague ask to elaborate by screenshotting or recording using https://jam.dev/
+this will be the new format of the ticket submission
+```
+Agent Name: (Name of the agent)
+Agent Link: (Get it from app.virtuals.io)
+Time Zone / Country: (Your location for scheduling or understanding time differences)
+Date and Time of Issue: (When the issue occurred)
+Description of the Issue: (Clearly explain the problem you’re experiencing)
+Attachments: (Include relevant screenshots, videos, or photos of the issue)
+User Details: (e.g., wallet address, email address)
+Context of the Issue: Steps to reproduce, what happened
+Important: You must record the issue using jam.dev and include the recording in your ticket submission.
+```
+
+* if they encounter too many requests or request limit has been reached
+A:
+- builder must check their X API Developer dashboard to see if their account has reached the request limit, for free tier accounts this should be the case as there are only 100 requests that can be accomodated
+
 * How to create Agent?
 A:
 -
