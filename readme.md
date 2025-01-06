@@ -408,10 +408,55 @@ headers = {
     'Accept': 'application/text'
 }
 ```
+
+or in javascript:
+```
+const url = `http://openlibrary.org/subjects/${topic}.json?details=true`;
+const response = fetch(url, {
+    "method": "GET",
+    "headers": {
+        "Accept": "application/text"
+    }
+});
+```
+
 2. url = 'https://openlibrary.org/search.json?q=the+lord+of+the+rings'
 3. maybe an api that outputs specific summary about a book derived from the 1st api request above that outputs numerous books and their respective authors based on topic or subject
 
 
+4. we can also use external image generating ai APIs for the agent
+
+in javascript this would be
+example 1 (creating the images for the agent to pull later):
+```
+const url = "https://cloud.leonardo.ai/api/rest/v1/generations"
+const response = fetch(url, {
+    "method": "POST",
+    "headers": {
+        "Accept": "application/json",
+        "Authorization": "authorization: Bearer <YOUR_API_KEY>",
+        "Content-Type": "application/json",
+    },
+    body: {
+        "height": 512,
+        "width": 512,
+        "modelId": "6bef9f1b-29cb-40c7-b9df-32b51c1f67d3",
+        "prompt": "{{topic}}"
+    }
+})
+```
+
+example 2 (pulling the created images for a twitter post):
+```
+const url = `https://cloud.leonardo.ai/api/rest/v1/generations/${YOUR_GENERATION_ID}`
+const response = fetch(url, {
+    "method": "GET",
+    "headers": {
+        "Accept": "application/json",
+        "Authorization": "authorization: Bearer <YOUR_API_KEY>",
+    },
+})
+```
 created agent behaviour can be tested in environment in the agent sandbox GAME at https://game-lite.virtuals.io/
 
 ah so these agents you create in teh GAME ui are not actually agents that you have seen in the virtuals-io website that have their own things to do and their character traits but these are only mere simulations and don't hold actually an ID where we also use to ingest new data. 
