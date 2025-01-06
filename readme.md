@@ -56,6 +56,7 @@ documentation: https://virtualprotocol.notion.site/GAME-Documentation-1592d2a429
 *THIS IS GOLDMINE*
 
 7. developer forum discord channel: https://discord.com/channels/1214528554197319690/1322795296236900403/1322795296236900403 - where developers could interact with other developers or builders in order to answer each others question. If a builder has a technical query then they can be referred to post here their inquiry in order to potentially be answered by other developers
+
 8. 
 
 # To do:
@@ -160,6 +161,10 @@ client id and client secret for oauth2.0 for client id and client secret fieldss
 
 then once the builder has created these credentials as opposed to GAME credentials, they need to enter these credentials within the sandbox x api cred page
 - see terminal if the agent is stuck. If so direct to maam aemyn that the agent needs to be refreshed
+- direct them to the giude you made
+- if they are using a G.A.M.E. api key which has rate limits and is different from the other option of using your own X API keys which you need to make in a developer account direct them to this: https://discord.com/channels/1214528554197319690/1323081628590936226
+- if they can't add new response ask them to try and clear their browsers caches
+- if agent fails to 
 
 * When tg bot is having a problem
 Q:
@@ -254,11 +259,18 @@ To combat scam projects, we’ve made updates to social link displays:
 
 These changes are now live. Additionally, we’ve upgraded our infrastructure to resolve sandbox failures. If you encounter any issues, please let us know! 🚀
 
-ticket 336
-ticket 333 - addding an API url from a external app, to GROK
-ticket 361 - 
+ticket 334 - issues connecting via their coinbase wallet
+ticket 353 - problem is that I tried to bridge 4000 VIRTUAL from Base to Ethereum, but I don't know how to get that to my web3 wallet. I'm not seeing it in legacy.virtual and it's not appearing in Metamask (0x79CcAd89F1Fc40ff60d1A566640B19F915D0ae01).
 
+ticket 410 - 
 
+ticket 433 - not picking up comments or ignoring tweet
+
+ticket 436 - I attached the terminal output of one of the most recent actions; and it seems it's reasoning correctly etc. but it just doesn't execute the tweet even if thinking that it did. I guess there must be an API in your system that returns positive, even if the tweet wasn't posted. Below I'm sharing the thought process and the success message, even if it didn't tweet.
+
+ticket mantrid - points out bugs like agent repeating the `browse_tweet_content_from_influential_users` function, and sometimes failing to post a tweet due to oauth1 permission errors i.e. `"Although I failed to post a tweet to engage in discussions due to oauth1 app permissions issue, I was able to gather relevant information on the topic."`, `failed to post tweet your client app is not configured its appropriate oauth1 permissions`
+* https://devcommunity.x.com/t/api-v2-cant-post-tweets-nor-create-tweets/206192
+* https://stackoverflow.com/questions/74436471/errors-when-trying-to-tweet-using-tweepy
 
 # Insights:
 * no need to prompt AI agents
