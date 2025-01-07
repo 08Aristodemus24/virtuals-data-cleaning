@@ -446,6 +446,45 @@ const response = fetch(url, {
 })
 ```
 
+5. open ai dall e
+curl https://api.openai.com/v1/images/generations \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -d '{
+    
+  }'
+
+alternative javascript code
+```
+const url = "https://api.openai.com/v1/images/generations"
+const response = fetch(url, {
+    "method": "POST",
+    "header": {
+        "Authorization": `Bearer ${OPEN_AI_API_KEY}`,
+    },
+    "body": {
+        "model": "dall-e-3",
+        "prompt": "A cute baby sea otter",
+        "n": 1,
+        "size": "1024x1024"
+    }
+});
+```
+
+In G.A.M.E. sandbox
+```
+method field: POST
+headers field: {
+    "Authorization": "Bearer <OPEN_AI_API_KEY>",
+} 
+payload field: {
+    "model": "dall-e-3",
+    "prompt": "A cute baby sea otter",
+    "n": 1,
+    "size": "1024x1024"
+}
+```
+
 example 2 (pulling the created images for a twitter post):
 ```
 const url = `https://cloud.leonardo.ai/api/rest/v1/generations/${YOUR_GENERATION_ID}`
